@@ -179,7 +179,7 @@ if -->|no| loose
 win --> end1
 loose --> end1
 ```
-### coin.js
+### coin.ejs
 ```mermaid
 flowchart TD;
 
