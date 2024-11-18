@@ -137,6 +137,147 @@ if(cpu==coin){
 
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
 ```
+## janken.ejs
+```javascript
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>じゃんけん</title>
+</head>
+<body>
+    <p>あなたの手は<%= your %>です．</p>
+    <p>コンピュータは<%= cpu %>です．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>試合中<%= win %>勝しています．</p>
+    <hr>
+    <form action="/janken">
+        <label for="hand">次は何を出す？</label>
+        <button type="submit" name="hand" value="グー">グー</button>
+        <button type="submit" name="hand" value="チョキ">チョキ</button>
+        <button type="submit" name="hand" value="パー">パー</button>
+        <button type="submit" name="hand" value="ムテキ">ムテキ</button>
+        <input type="hidden" name="win" value="<%= win %>">
+        <input type="hidden" name="total" value="<%= total %>">
+    </form>   
+</body>
+</html>
+```
+## atti.ejs
+```javascript
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>あっち向いてホイ</title>
+</head>
+<body>
+    <p>あなたは<%= your %>を指しました．</p>
+    <p>コンピュータは<%= cpu %>を向きました．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>試合中<%= win %>勝しています．</p>
+    <hr>
+    <form action="/atti">
+        <label for="hand">次は何を出す？</label>
+        <button type="submit" name="dir" value="上">上</button>
+        <button type="submit" name="dir" value="下">下</button>
+        <button type="submit" name="dir" value="左">左</button>
+        <button type="submit" name="dir" value="右">右</button>
+        <input type="hidden" name="win" value="<%= win %>">
+        <input type="hidden" name="total" value="<%= total %>">
+    </form>   
+</body>
+</html>
+```
+## coin.ejs
+```javascript
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title> コイントス</title>
+</head>
+<body>
+    <p>あなたの手は<%= your %>です．</p>
+    <p>コンピュータは<%= cpu %>です．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>回中<%= win %>回当てています．</p>
+    <hr>
+    <form action="/coin">
+        <label for="coin">次は何を出す？</label>
+        <button type="submit" name="coin" value="表">表</button>
+        <button type="submit" name="coin" value="裏">裏</button>
+        <input type="hidden" name="win" value="<%= win %>">
+        <input type="hidden" name="total" value="<%= total %>">
+    </form>   
+</body>
+</html>
+```
+## janken.html
+```javascript
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>じゃんけん</title>
+</head>
+<body>
+    <form action="/janken">
+        <input type="text" name="hand" required>
+        <label for="hand">何を出す？</label>
+        <input type="submit" values="じゃんけん　ポン">
+        <input type="hidden" name="win" value="0">
+        <input type="hidden" name="total" value="0">
+    </form>
+</body>
+</html>
+```
+
+## atti.html
+```javascript
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>じゃんけん</title>
+</head>
+<body>
+    <form action="/janken">
+        <input type="text" name="hand" required>
+        <label for="dir">何を出す？</label>
+        <input type="submit" values="じゃんけん　ポン">
+        <input type="hidden" name="win" value="0">
+        <input type="hidden" name="total" value="0">
+    </form>
+</body>
+</html>
+```
+
+## coin.html
+```javascript
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title> コイントス</title>
+</head>
+<body>
+    <p>あなたの手は<%= your %>です．</p>
+    <p>コンピュータは<%= cpu %>です．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>回中<%= win %>回当てています．</p>
+    <hr>
+    <form action="/coin">
+        <label for="coin">次は何を出す？</label>
+        <button type="submit" name="coin" value="表">表</button>
+        <button type="submit" name="coin" value="裏">裏</button>
+        <input type="hidden" name="win" value="<%= win %>">
+        <input type="hidden" name="total" value="<%= total %>">
+    </form>   
+</body>
+</html>
+```
+
 ## フローチャート
 ### app5.js
 
