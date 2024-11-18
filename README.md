@@ -161,9 +161,7 @@ judge -->|yes| win --> end1
 judge -->|no| loose
 loose --> end1
 ```
-
-
-
+### atti.ejs
 ```mermaid
 flowchart TD;
 
@@ -172,7 +170,24 @@ end1["終了"]
 atti[方向を決定]
 if{"同じ方向か"}
 win["勝ち"]
-aiko["あいこ"]
+loose["負け"]
+
+start --> atti
+atti -->if
+if -->|yes| win
+if -->|no| loose
+win --> end1
+loose --> end1
+```
+### coin.js
+```mermaid
+flowchart TD;
+
+start["coin"];
+end1["終了"]
+atti[方向を決定]
+if{"同じ面か"}
+win["勝ち"]
 loose["負け"]
 
 start --> atti
@@ -183,3 +198,14 @@ win --> end1
 loose --> end1
 ```
 ##　使用方法
+ターミナルを開き，jsファイルがあるディレクトリに移動してから
+node app5.js
+を入力する．
+次に，ブラウザを開き
+じゃんけんの場合は
+http://localhost:8080/janken
+あっち向いてほいの場合は
+http://localhost:8080/atti
+コイントスの場合は
+http://localhost:8080/coin
+をアドレスバーに入れる．
