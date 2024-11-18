@@ -25,12 +25,12 @@ app.get("/luck", (req, res) => {
   else if( num==2 ) luck = '中吉';
   console.log( 'あなたの運勢は' + luck + 'です' );
   res.render( 'luck', {number:num, luck:luck} );
-});
+}); 
 
 app.get("/janken", (req, res) => {
   let hand = req.query.hand;
-  let win = Number( req.query.win );
-  let total = Number( req.query.total );
+  let win = Number(req.query.win)||0;
+  let total = Number(req.query.total)||0;
   console.log( {hand, win, total});
   const num = Math.floor( Math.random() * 3 + 1 );
   let cpu = '';
@@ -40,11 +40,13 @@ app.get("/janken", (req, res) => {
 if(cpu==hand){
   judgement = 'あいこ';
   console.log('あいこ');
-} else if ((hand == 'グー' && cpu == 'チョキ')||(hand == 'チョキ' && cpu == 'パー')||(hand == 'パー' && cpu == 'グー')){
+} else if ((hand == 'グー' && cpu == 'チョキ')||(hand == 'チョキ' && cpu == 'パー')||(hand == 'パー' && cpu == 'グー')||(hand == 'ムテキ')){
   judgement = '勝ち';
+  console.log('勝ち');
   win++;
 } else {
   judgement = '負け';
+  console.log('負け');
 }
   total++;
   const display = {
@@ -55,6 +57,63 @@ if(cpu==hand){
     total: total
   }
   res.render( 'janken', display );
+});
+
+app.get("/atti", (req, res) => {
+  let dir = req.query.dir;
+  let win = Number(req.query.win)||0;
+  let total = Number(req.query.total)||0;
+  console.log( {dir, win, total});
+  const num = Math.floor( Math.random() * 4 + 1 );
+  let cpu = '';
+  if( num==1 ) cpu = '上';
+  else if( num==2 ) cpu = '右';
+  else if( num==3 ) cpu = '左';
+  else cpu = '下';
+if(cpu==dir){
+  judgement = '勝ち';
+  console.log('勝ち');
+  win++;
+} else {
+  judgement = '負け';
+}
+  total++;
+  const display = {
+    your: dir,
+    cpu: cpu,
+    judgement: judgement,
+    win: win,
+    total: total
+  }
+  res.render( 'atti', display );
+});
+
+app.get("/coin", (req, res) => {
+  let coin = req.query.coin;
+  let win = Number(req.query.win)||0;
+  let total = Number(req.query.total)||0;
+  console.log( {coin, win, total});
+  const num = Math.floor( Math.random() * 2 + 1 );
+  let cpu = '';
+  if( num==1 ) cpu = '表';
+  else cpu = '裏';
+if(cpu==coin){
+  judgement = '勝ち';
+  console.log('勝ち');
+  win++;
+} else {
+  judgement = '負け';
+  console.log('負け');
+}
+  total++;
+  const display = {
+    your: coin,
+    cpu: cpu,
+    judgement: judgement,
+    win: win,
+    total: total
+  }
+  res.render( 'coin', display );
 });
 
 app.listen(8080, () => console.log("Example app listening on port 8080!"));

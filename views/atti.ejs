@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>あっち向いてホイ</title>
+</head>
+<body>
+    <p>あなたは<%= your %>を指しました．</p>
+    <p>コンピュータは<%= cpu %>を向きました．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>試合中<%= win %>勝しています．</p>
+    <hr>
+    <form action="/atti">
+        <label for="hand">次は何を出す？</label>
+        <button type="submit" name="dir" value="上">上</button>
+        <button type="submit" name="dir" value="下">下</button>
+        <button type="submit" name="dir" value="左">左</button>
+        <button type="submit" name="dir" value="右">右</button>
+        <input type="hidden" name="win" value="<%= win %>">
+        <input type="hidden" name="total" value="<%= total %>">
+    </form>   
+</body>
+</html>

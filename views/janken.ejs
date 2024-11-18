@@ -11,11 +11,13 @@
     <p>現在<%= total %>試合中<%= win %>勝しています．</p>
     <hr>
     <form action="/janken">
-        <input type="text" name="hand" required>
         <label for="hand">次は何を出す？</label>
+        <button type="submit" name="hand" value="グー">グー</button>
+        <button type="submit" name="hand" value="チョキ">チョキ</button>
+        <button type="submit" name="hand" value="パー">パー</button>
+        <button type="submit" name="hand" value="ムテキ">ムテキ</button>
         <input type="hidden" name="win" value="<%= win %>">
         <input type="hidden" name="total" value="<%= total %>">
-        <input type="submit" values="じゃんけん　ポン">
     </form>   
 </body>
 </html>
