@@ -69,7 +69,7 @@ loose --> end1
 ## コイントスについて
 ###　実行手順
 1:app5.jsを起動する。
-2:次に，webブラウザでhttp://localhost:8080/coin
+2:次に，webブラウザでhttp://localhost:8080/coinにアクセスする。
 3:出したい手を入力する
 ### フローチャート
 ```mermaid

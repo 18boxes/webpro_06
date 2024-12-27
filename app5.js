@@ -21,8 +21,12 @@ app.get("/icon", (req, res) => {
 app.get("/luck", (req, res) => {
   const num = Math.floor( Math.random() * 6 + 1 );
   let luck = '';
-  if( num==1 ) luck = '大吉';
-  else if( num==2 ) luck = '中吉';
+  if (num == 1) luck = '大吉';
+  else if (num == 2) luck = '中吉';
+  else if (num == 3) luck = '小吉';
+  else if (num == 4) luck = '末吉';
+  else if (num == 5) luck = '凶';
+  else luck = '大凶';
   console.log( 'あなたの運勢は' + luck + 'です' );
   res.render( 'luck', {number:num, luck:luck} );
 }); 
