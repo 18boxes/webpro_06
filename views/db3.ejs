@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>市区町村</title>
+</head>
+<body>
+  <h2>市区町村の一覧</h2>
+  <a href="/">トップに戻る</a>
+  <% for (let i = 0; i < data.length; i++) { %>
+    <p>
+      市区町村コード：<%= data[i].id %><br>
+      市区町村名：<%= data[i].name %><br>
+      人口：<%= data[i].population %>人<br>
+      面積：<%= data[i].area %> km<sup>2</sup><br>
+
+      <a href="/tokyo/detail/<%= i %>">［詳細］</a>
+      <a href="/tokyo/delete/<%= i %>"
+         onclick="return confirm('本当に削除しますか？');">
+         ［削除］
+      </a>
+    </p>
+    <hr>
+  <% } %>
+
+  <p><a href="/tokyo/create">＋ 市区町村を追加</a></p>
+</body>
+</html>

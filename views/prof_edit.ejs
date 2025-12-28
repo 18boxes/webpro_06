@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %> の編集</h2>
+
+  <form action="/prof/update/<%= id %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+
+      <tr>
+        <td>ID</td>
+        <td>
+          <input type="text" name="id" value="<%= data.id %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>名前</td>
+        <td>
+          <input type="text" name="name" value="<%= data.name %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>読み</td>
+        <td>
+          <input type="text" name="yomi" value="<%= data.yomi %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>役職</td>
+        <td>
+          <input type="text" name="post" value="<%= data.post %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>年齢</td>
+        <td>
+          <input type="text" name="old" value="<%= data.old %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>所属</td>
+        <td>
+          <input type="text" name="aff" value="<%= data.aff %>">
+        </td>
+      </tr>
+    </table>
+
+    <input type="submit" value="更新">
+  </form>
+
+  <a href="/prof">一覧に戻る</a>
+</body>
+</html>

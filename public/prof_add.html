@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>教授の追加</title>
+</head>
+<body>
+    <form action="/prof" method="POST">
+        <label for="id">ID</label>
+        <input type="number" name="id" id="id" required><br>
+
+        <label for="name">名前</label>
+        <input type="text" name="name" id="name" required><br>
+
+        <label for="yomi">読み</label>
+        <input type="text" name="yomi" id="yomi" required><br>
+
+        <label for="post">役職</label>
+        <input type="text" name="post" id="post" required><br>
+
+        <label for="old">年齢</label>
+        <input type="text" name="old" id="old" required><br>
+
+        <label for="aff">所属</label>
+        <input type="text" name="aff" id="aff" required><br>
+
+        <input type="submit" value="登録">
+    </form>
+
+    <a href="/prof">一覧に戻る</a>
+</body>
+</html>

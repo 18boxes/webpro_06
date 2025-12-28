@@ -1,5 +1,3 @@
-#task.js ページ遷移図
-
 ```mermaid
 stateDiagram-v2
 トップ --> tokyo: /tokyo（市区町村一覧）
@@ -44,7 +42,7 @@ sakana_delete --> sakana: 削除完了
 
 ```mermaid
 stateDiagram-v2
-トップ --> prof: /prof（教授U一覧）
+トップ --> prof: /prof（教授一覧）
 prof --> トップ: 戻る
 
 prof --> prof_detail: 詳細

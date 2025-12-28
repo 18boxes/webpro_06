@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>魚へんの漢字</title>
+</head>
+<body>
+  <h2>魚へんの漢字を追加</h2>
+
+  <form action="/sakana" method="POST">
+    <table>
+      <tr><th>項目</th><th>入力</th></tr>
+      <tr><td>ID</td><td><input type="text" name="id"></td></tr>
+      <tr><td>字</td><td><input type="text" name="name"></td></tr>
+      <tr><td>音読み</td><td><input type="text" name="onyomi"></td></tr>
+      <tr><td>訓読み</td><td><input type="text" name="kunyomi"></td></tr>
+    </table>
+    <input type="submit" value="登録">
+  </form>
+
+  <a href="/sakana">一覧に戻る</a>
+</body>
+</html>

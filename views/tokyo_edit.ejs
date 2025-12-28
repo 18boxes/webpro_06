@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %> の編集</h2>
+
+  <form action="/tokyo/update/<%= id %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+
+      <tr>
+        <td>市区町村コード</td>
+        <td>
+          <input type="text" name="id" value="<%= data.id %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>名前</td>
+        <td>
+          <input type="text" name="name" value="<%= data.name %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>人口</td>
+        <td>
+          <input type="text" name="population" value="<%= data.population %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>面積</td>
+        <td>
+          <input type="text" name="area" value="<%= data.area %>">
+        </td>
+      </tr>
+    </table>
+
+    <input type="submit" value="更新">
+  </form>
+
+  <a href="/tokyo">一覧に戻る</a>
+</body>
+</html>

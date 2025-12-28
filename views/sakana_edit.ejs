@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %> の編集</h2>
+
+  <form action="/sakana/update/<%= id %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+
+      <tr>
+        <td>ID</td>
+        <td>
+          <input type="text" name="id" value="<%= data.id %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>字</td>
+        <td>
+          <input type="text" name="name" value="<%= data.name %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>音読み</td>
+        <td>
+          <input type="text" name="onyomi" value="<%= data.onyomi %>">
+        </td>
+      </tr>
+
+      <tr>
+        <td>訓読み</td>
+        <td>
+          <input type="text" name="kunyomi" value="<%= data.kunyomi %>">
+        </td>
+      </tr>
+    </table>
+
+    <input type="submit" value="更新">
+  </form>
+
+  <a href="/sakana">一覧に戻る</a>
+</body>
+</html>
